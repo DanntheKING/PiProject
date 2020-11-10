@@ -1,7 +1,7 @@
 ##############################################################################
-# Name:
-# Date:
-# Assignment:
+# Name: Daniel Davis, Joshua Nelson
+# Date: 10/11/2020
+# Assignment: Final Pi Project
 ###############################################################################
 
 # Import section
