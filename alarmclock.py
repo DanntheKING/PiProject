@@ -41,7 +41,7 @@ l1.pack(fill=BOTH, expand=1)
 gif = PhotoImage(file='download.gif')
 owl = PhotoImage(file='owl.gif')
 Ocean = mixer.Sound('ocean.wav')
-Rooster = mixer.Sound('rooster.wav')
+Rooster = mixer.Sound('Rudy_rooster_crowing-Shelley-1948282641.wav')
 
 
 # Clock function using the photoresistor data and deciding if it is Morning or night
