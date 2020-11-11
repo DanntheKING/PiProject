@@ -40,6 +40,8 @@ l1 = Label(root)
 l1.pack(fill=BOTH, expand=1)
 gif = PhotoImage(file='download.gif')
 owl = PhotoImage(file='owl.gif')
+Ocean = mixer.Sound('ocean.wav')
+Rooster = mixer.Sound('rooster.wav')
 
 
 # Clock function using the photoresistor data and deciding if it is Morning or night
@@ -49,18 +51,23 @@ def clock():
         print("LDR Value: %d" % ldr_value)
         sleep(delay)
         break
-
+    # Night time
     if ldr_value >= 900:
+        GPIO.output(17, GPIO.LOW)
+        l1.configure(image=owl)
+        Ocean.play()
+        sleep(5)
+        Ocean.stop()
+    # Morning time
+    if ldr_value <= 899:
         GPIO.output(17, GPIO.HIGH)
         sleep(.05)
         GPIO.output(17, GPIO.LOW)
         sleep(.05)
-        l1.configure(image=owl)
-
-    if ldr_value <= 899:
-        GPIO.output(17, GPIO.LOW)
         l1.configure(image=gif)
-        mixer.Sound('ocean.wav')
+        Rooster.play()
+        sleep(5)
+        Rooster.stop()
     root.after(1000, clock)
 
 
